@@ -42,8 +42,7 @@ contract tijori{
         require(_fileSize>0);
         
         fileCount++;
-        files[1]= File(fileCount,_fileHash,_fileSize,_fileType,_fileName,_fileDesc,block.timestamp,payable(msg.sender));
-
+        files[fileCount]= File(fileCount,_fileHash,_fileSize,_fileType,_fileName,_fileDesc,block.timestamp,payable(msg.sender));
         emit fileUploaded(fileCount, _fileHash, _fileSize, _fileType, _fileName, _fileDesc, block.timestamp,payable(msg.sender));
 
     }
